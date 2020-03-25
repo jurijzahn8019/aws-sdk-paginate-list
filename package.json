@@ -15,8 +15,9 @@
     "coveralls": "cat ./tmp/coverage/lcov.info | coveralls",
     "lint": "eslint src/**/*.ts",
     "packlocal": "export P=jurijzahn8019-aws; npm run clean && npm run build && npm pack && mkdir -p ./tmp && mv -f $P-*.tgz ./tmp/ && tar xfz ./tmp/$P-*.tgz -C ./tmp",
-    "pub": "npm run clean && npm run build && npm publish",
-    "release": "standard-version",
+    "pub": "npm run clean && npm run build && npm publish --access public",
+    "prerel": "standard-version --skip.tag --skip.changelog -p",
+    "release": "standard-version --skip.tag",
     "test": "jest"
   },
   "repository": {
