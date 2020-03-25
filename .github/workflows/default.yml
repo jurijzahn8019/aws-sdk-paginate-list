@@ -2,6 +2,8 @@ name: Build and Test Code
 
 on:
   push:
+    branches:
+      - master
   pull_request:
     branches:
       - master
