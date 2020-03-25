@@ -1,34 +1,32 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Service } from "aws-sdk";
-import { Request } from "aws-sdk/lib/request";
-
-/**
- * Util Type to extract result of a request to get its contains
- */
-export type UnwrapRequest<T> = T extends Request<infer U, any> ? U : T;
-
-export type PromiseFunc<P = object> = (params: P) => Request<any, any>;
+import { Service, Request } from "aws-sdk";
+import { PaginationRequest, getTokenParam } from "./mappings";
+import type { UnwrapRequest, ResponsePromise } from "./common";
 
 /**
  * Uses Dark Energy (any) to paginate list function
- * The Given Function should support NextToken
+ * This is done by looking at the result field identified by tokenField
  *
- * @param service
- * @param func
- * @param param
+ * @param service The Service object to call the function on
+ * @param func name of the function in the aws Service Object
+ * @param params parameter which should be passed to the list function
+ * @param tokenField field name on the result holding the pagination token
  */
-export async function paginate<
-  F extends (...args: any[]) => any,
+async function paginateInternal<
   S extends Service = Service,
   M extends keyof S = any,
-  P extends S[M] extends F ? Parameters<F> : any = any,
-  R extends S[M] extends F ? UnwrapRequest<ReturnType<F>> : never = any,
-  T extends keyof P = any
->(service: S, func: M, param?: P, token?: T): Promise<Omit<R, T>> {
-  const prm: any = param || {};
+  P = S[M] extends (param: any, callback: any) => any
+    ? Parameters<S[M]>[0]
+    : never,
+  R = S[M] extends (...args: any[]) => Request<any, any>
+    ? UnwrapRequest<ReturnType<S[M]>>
+    : never,
+  T extends keyof P = never
+>(service: S, func: M, params?: P, tokenField?: T): ResponsePromise<P, R, T> {
+  let prm: any = params || {};
   const bound = ((service[func] as unknown) as (args?: P) => R).bind(service);
   const res = {} as any;
-  const tkn = token || "NextToken";
+  const tkn = tokenField || "NextToken";
 
   // eslint-disable-next-line no-constant-condition
   while (true) {
@@ -50,9 +48,29 @@ export async function paginate<
       break;
     }
 
-    // eslint-disable-next-line no-param-reassign
-    prm[tkn] = resp[tkn];
+    prm = { ...prm, [tkn]: resp[tkn] };
   }
 
   return res;
 }
+
+export function paginate<
+  S extends Service,
+  F extends keyof S,
+  P extends PaginationRequest<S, F>,
+  R = S[F] extends (...args: any[]) => Request<any, any>
+    ? UnwrapRequest<ReturnType<S[F]>>
+    : never,
+  T extends keyof R = any
+>(
+  service: S,
+  func: F,
+  param?: P,
+  nextTokenParam?: T
+): ResponsePromise<P, R, keyof P> {
+  const tokenParam = nextTokenParam || getTokenParam(service);
+  return paginateInternal<S>(service, func, param as any, tokenParam as any);
+}
+
+export * from "./common";
+export * from "./mappings";

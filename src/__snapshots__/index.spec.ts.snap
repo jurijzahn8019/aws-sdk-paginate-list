@@ -1,0 +1,234 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`paginate Should work with KMS 1`] = `
+Object {
+  "Keys": Array [
+    Object {
+      "KeyId": "foo",
+    },
+    Object {
+      "KeyId": "bar",
+    },
+  ],
+  "NextMarker": "Next: 1",
+}
+`;
+
+exports[`paginate Should work with KMS: Inputs 1`] = `
+Array [
+  Array [
+    Object {},
+  ],
+  Array [
+    Object {
+      "NextMarker": "Next: 1",
+    },
+  ],
+]
+`;
+
+exports[`paginate Should work with KMS: kms.listKeys (resolve mock 4e9950a1f2305f56d358cad23f28203fb3aacbef) 1`] = `
+Array [
+  Object {},
+]
+`;
+
+exports[`paginate Should work with KMS: kms.listKeys (resolve mock 7a939ca3eaf7e21a6582eedc5514308fe8a6e310) 1`] = `
+Array [
+  Object {
+    "NextMarker": "Next: 1",
+  },
+]
+`;
+
+exports[`paginate Should work with Lambda 1`] = `
+Object {
+  "Functions": Array [
+    Object {
+      "FunctionName": "foo",
+    },
+    Object {
+      "FunctionName": "bar",
+    },
+  ],
+  "NextMarker": "Next: 1",
+}
+`;
+
+exports[`paginate Should work with Lambda: Inputs 1`] = `
+Array [
+  Array [
+    Object {
+      "MaxItems": 100,
+    },
+  ],
+  Array [
+    Object {
+      "MaxItems": 100,
+      "NextMarker": "Next: 1",
+    },
+  ],
+]
+`;
+
+exports[`paginate Should work with Lambda: lambda.listFunctions (resolve mock 040f275b1081983968f569e9b2aa48ff15d7f718) 1`] = `
+Array [
+  Object {
+    "MaxItems": 100,
+  },
+]
+`;
+
+exports[`paginate Should work with Lambda: lambda.listFunctions (resolve mock bf02803c56a2d174bfba4cac7af41409d46e2f68) 1`] = `
+Array [
+  Object {
+    "MaxItems": 100,
+    "NextMarker": "Next: 1",
+  },
+]
+`;
+
+exports[`paginate Should work with SecretsManager 1`] = `
+Object {
+  "NextToken": "Next: 1",
+  "SecretList": Array [
+    Object {
+      "Name": "foo",
+    },
+    Object {
+      "Name": "bar",
+    },
+  ],
+}
+`;
+
+exports[`paginate Should work with SecretsManager: Inputs 1`] = `
+Array [
+  Array [
+    Object {
+      "MaxResults": 100,
+    },
+  ],
+  Array [
+    Object {
+      "MaxResults": 100,
+      "NextToken": "Next: 1",
+    },
+  ],
+]
+`;
+
+exports[`paginate Should work with SecretsManager: secretsmanager.listSecrets (resolve mock 3602e338bf3fef2cfbc6bd0eaf7ba367ad15277f) 1`] = `
+Array [
+  Object {
+    "MaxResults": 100,
+    "NextToken": "Next: 1",
+  },
+]
+`;
+
+exports[`paginate Should work with SecretsManager: secretsmanager.listSecrets (resolve mock f181d924806eb754f9f1dce49c2c399524263357) 1`] = `
+Array [
+  Object {
+    "MaxResults": 100,
+  },
+]
+`;
+
+exports[`paginate core Should paginate over pagination api 1`] = `
+Object {
+  "NextToken": "Next: 2",
+  "SecretList": Array [
+    Object {
+      "Name": "foo",
+    },
+    Object {
+      "Name": "bar",
+    },
+    Object {
+      "Name": "baz",
+    },
+  ],
+}
+`;
+
+exports[`paginate core Should paginate over pagination api: Inputs 1`] = `
+Array [
+  Array [
+    Object {},
+  ],
+  Array [
+    Object {
+      "NextToken": "Next: 2",
+    },
+  ],
+  Array [
+    Object {
+      "NextToken": "Next: 1",
+    },
+  ],
+]
+`;
+
+exports[`paginate core Should paginate over pagination api: secretsmanager.listSecrets (resolve mock 1d3aa71c12c9564b70833e857f11409845f2f7df) 1`] = `
+Array [
+  Object {
+    "NextToken": "Next: 2",
+  },
+]
+`;
+
+exports[`paginate core Should paginate over pagination api: secretsmanager.listSecrets (resolve mock 4e9950a1f2305f56d358cad23f28203fb3aacbef) 1`] = `
+Array [
+  Object {},
+]
+`;
+
+exports[`paginate core Should paginate over pagination api: secretsmanager.listSecrets (resolve mock 794c7332d9eac87d230d869844bd75b95c638580) 1`] = `
+Array [
+  Object {
+    "NextToken": "Next: 1",
+  },
+]
+`;
+
+exports[`paginate core Should work with Any supports NextToken 1`] = `
+Object {
+  "NextToken": "Next: 1",
+  "Topics": Array [
+    Object {
+      "TopicArn": "foo",
+    },
+    Object {
+      "TopicArn": "bar",
+    },
+  ],
+}
+`;
+
+exports[`paginate core Should work with Any supports NextToken: Inputs 1`] = `
+Array [
+  Array [
+    Object {},
+  ],
+  Array [
+    Object {
+      "NextToken": "Next: 1",
+    },
+  ],
+]
+`;
+
+exports[`paginate core Should work with Any supports NextToken: sns.listTopics (resolve mock 4e9950a1f2305f56d358cad23f28203fb3aacbef) 1`] = `
+Array [
+  Object {},
+]
+`;
+
+exports[`paginate core Should work with Any supports NextToken: sns.listTopics (resolve mock 794c7332d9eac87d230d869844bd75b95c638580) 1`] = `
+Array [
+  Object {
+    "NextToken": "Next: 1",
+  },
+]
+`;
