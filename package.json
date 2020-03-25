@@ -1,0 +1,72 @@
+{
+  "name": "aws-sdk-paginate-list",
+  "version": "1.0.0",
+  "description": "Provides a function to paginate over a list function on aws-sdk",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es6.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "npm run clean && for S in rollup types; do npm run build:$S; done",
+    "build:rollup": "rollup -c",
+    "build:types": "tsc -p tsconfig.prod.json -d --outFile dist/index.d.ts --emitDeclarationOnly",
+    "build:tsc": "tsc --build tsconfig.prod.json",
+    "build:watch": "tsc -w",
+    "clean": "rm -rf ./dist ./tmp",
+    "coveralls": "cat ./tmp/coverage/lcov.info | coveralls",
+    "lint": "eslint src/**/*.ts",
+    "packlocal": "export P=jurijzahn8019-aws; npm run clean && npm run build && npm pack && mkdir -p ./tmp && mv -f $P-*.tgz ./tmp/ && tar xfz ./tmp/$P-*.tgz -C ./tmp",
+    "pub": "npm run clean && npm run build && npm publish",
+    "release": "standard-version",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jurijzahn8019/aws-sdk-paginate-list.git"
+  },
+  "keywords": [
+    "aws",
+    "aws-sdk",
+    "list",
+    "paginate"
+  ],
+  "author": "Jurij Zahn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues"
+  },
+  "homepage": "https://github.com/jurijzahn8019/aws-sdk-paginate-list#readme",
+  "peerDependencies": {
+    "aws-sdk": "^2.x.x"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@jurijzahn8019/aws-promise-jest-mock": "^2.1.1",
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "@rollup/plugin-typescript": "4.0.0",
+    "@types/jest": "^25.1.4",
+    "@types/node": "^13.7.4",
+    "@typescript-eslint/eslint-plugin": "^2.25.0",
+    "@typescript-eslint/parser": "^2.25.0",
+    "aws-sdk": "^2.645.0",
+    "coveralls": "^3.0.11",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-import-resolver-typescript": "^2.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jest": "^23.8.2",
+    "eslint-plugin-prettier": "^3.1.2",
+    "git-branch": "^2.0.1",
+    "husky": "^4.2.3",
+    "jest": "^25.1.0",
+    "jest-junit": "^10.0.0",
+    "prettier": "^2.0.2",
+    "rollup": "^2.2.0",
+    "rollup-plugin-exclude-dependencies-from-bundle": "^1.1.7",
+    "standard-version": "^7.1.0",
+    "ts-jest": "^25.2.1",
+    "ts-node": "^8.8.1",
+    "typescript": "^3.8.3"
+  }
+}
