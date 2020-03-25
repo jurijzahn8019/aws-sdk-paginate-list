@@ -47,13 +47,13 @@ jobs:
           registry-url: https://npm.pkg.github.com/
 
       - name: Publish Prerelease
-        if: ${{github.event.release.prerelease}}
-        run: npm run publish  --access public --tag next
+        if: "github.event.release.prerelease"
+        run: npm publish  --access public --tag next
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Publish Release
-        if: ${{!github.event.release.prerelease}}
-        run: npm run pub --access public
+        if: "!github.event.release.prerelease"
+        run: npm pub --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
