@@ -12,7 +12,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: printenv
       - run: npm ci
       - run: npm test
   # publish-npm:
@@ -28,21 +27,33 @@ jobs:
   #         registry-url: https://registry.npmjs.org/
   #     - run: npm ci
   #     - run: npm run pub
-  # publish-gpr:
-  #   needs: build
-  #   runs-on: ubuntu-latest
-  #   env:
-  #     NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - uses: actions/setup-node@v1
-  #       with:
-  #         node-version: 12
-  #     - name: Install Dependencies
-  #       run: npm ci
-  #     - uses: actions/setup-node@v1
-  #       with:
-  #         node-version: 12
-  #         registry-url: https://npm.pkg.github.com/
-  #     - name: Publish Package
-  #       run: npm run pub
+
+  publish-gpr:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://npm.pkg.github.com/
+
+      - name: Publish Prerelease
+        if: ${{github.event.release.prerelease}}
+        run: npm run publish  --access public --tag next
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Publish Release
+        if: ${{!github.event.release.prerelease}}
+        run: npm run pub --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
