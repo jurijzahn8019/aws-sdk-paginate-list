@@ -39,14 +39,14 @@ export type KMSPaginationRequest<
   ? KMS.ListKeysRequest
   : AnyParam;
 
-export function getTokenParam<S extends Service>(
+export function getTokenParams<S extends Service>(
   service: S
-): string | undefined {
+): { paramToken: string; responseToken: string } {
   return service instanceof KMS
-    ? "NextMarker"
+    ? { paramToken: "Marker", responseToken: "NextMarker" }
     : service instanceof SecretsManager
-    ? "NextToken"
+    ? { paramToken: "NextToken", responseToken: "NextToken" }
     : service instanceof Lambda
-    ? "NextMarker"
-    : undefined;
+    ? { paramToken: "Marker", responseToken: "NextMarker" }
+    : { paramToken: "NextToken", responseToken: "NextToken" };
 }

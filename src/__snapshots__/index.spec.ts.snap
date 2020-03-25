@@ -21,7 +21,7 @@ Array [
   ],
   Array [
     Object {
-      "NextMarker": "Next: 1",
+      "Marker": "Next: 1",
     },
   ],
 ]
@@ -33,10 +33,10 @@ Array [
 ]
 `;
 
-exports[`paginate Should work with KMS: kms.listKeys (resolve mock 7a939ca3eaf7e21a6582eedc5514308fe8a6e310) 1`] = `
+exports[`paginate Should work with KMS: kms.listKeys (resolve mock dfca1cc44a188551e71116817378f44072d50f67) 1`] = `
 Array [
   Object {
-    "NextMarker": "Next: 1",
+    "Marker": "Next: 1",
   },
 ]
 `;
@@ -64,8 +64,8 @@ Array [
   ],
   Array [
     Object {
+      "Marker": "Next: 1",
       "MaxItems": 100,
-      "NextMarker": "Next: 1",
     },
   ],
 ]
@@ -79,11 +79,11 @@ Array [
 ]
 `;
 
-exports[`paginate Should work with Lambda: lambda.listFunctions (resolve mock bf02803c56a2d174bfba4cac7af41409d46e2f68) 1`] = `
+exports[`paginate Should work with Lambda: lambda.listFunctions (resolve mock 1f8d536a0d6c2c735932f8b633c3c3eb1c316258) 1`] = `
 Array [
   Object {
+    "Marker": "Next: 1",
     "MaxItems": 100,
-    "NextMarker": "Next: 1",
   },
 ]
 `;
@@ -229,6 +229,47 @@ exports[`paginate core Should work with Any supports NextToken: sns.listTopics (
 Array [
   Object {
     "NextToken": "Next: 1",
+  },
+]
+`;
+
+exports[`paginate core Should work with Any with configurations 1`] = `
+Object {
+  "FooToken": "Next: 1",
+  "Topics": Array [
+    Object {
+      "TopicArn": "foo",
+    },
+    Object {
+      "TopicArn": "bar",
+    },
+  ],
+}
+`;
+
+exports[`paginate core Should work with Any with configurations: Inputs 1`] = `
+Array [
+  Array [
+    Object {},
+  ],
+  Array [
+    Object {
+      "FooMarker": "Next: 1",
+    },
+  ],
+]
+`;
+
+exports[`paginate core Should work with Any with configurations: sns.listTopics (resolve mock 4e9950a1f2305f56d358cad23f28203fb3aacbef) 1`] = `
+Array [
+  Object {},
+]
+`;
+
+exports[`paginate core Should work with Any with configurations: sns.listTopics (resolve mock 915c748a6f136a3268d7761da7eab7a1525b41b3) 1`] = `
+Array [
+  Object {
+    "FooMarker": "Next: 1",
   },
 ]
 `;

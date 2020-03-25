@@ -31,14 +31,21 @@ module.exports = {
     "node_modules",
     "__fixtures__",
     ".*\\.i?spec\\.(t|j)sx?$",
-    "src/test/.*"
+    "src/test/.*",
   ],
 
   // A list of reporter names that Jest uses when writing coverage reports
   coverageReporters: ["json", "text", "text-summary", "lcov", "clover"],
 
   // An object that configures minimum threshold enforcement for coverage results
-  // coverageThreshold: null,
+  coverageThreshold: {
+    global: {
+      branches: 100,
+      functions: 100,
+      lines: 100,
+      statements: 100,
+    },
+  },
 
   // A path to a custom dependency extractor
   // dependencyExtractor: null,
@@ -89,8 +96,8 @@ module.exports = {
   preset: "ts-jest",
   globals: {
     "ts-jest": {
-      isolatedModules: true
-    }
+      isolatedModules: true,
+    },
   },
 
   // Run tests from one or more projects
@@ -152,7 +159,7 @@ module.exports = {
   // ],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
-  testRegex: ["(?<!dist\\/)src\\/(?!test).+\\.(test|spec)\\.(t|j)sx?$"]
+  testRegex: ["(?<!dist\\/)src\\/(?!test).+\\.(test|spec)\\.(t|j)sx?$"],
 
   // This option allows the use of a custom results processor
   // testResultsProcessor: null,

@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable import/no-extraneous-dependencies */
-import { Lambda, SecretsManager, KMS, S3, SNS } from "aws-sdk";
+import { Lambda, SecretsManager, KMS, SNS } from "aws-sdk";
 import { on } from "@jurijzahn8019/aws-promise-jest-mock";
 import { paginate } from "./index";
 
@@ -45,6 +46,32 @@ describe("paginate core", () => {
     const res = await paginate<SNS, "listTopics", SNS.ListTopicsInput>(
       svc,
       "listTopics"
+    );
+
+    expect(res).toMatchSnapshot();
+    expect(res.Topics).toHaveLength(2);
+    expect(listFunc.mock).toHaveBeenCalledTimes(2);
+    expect(listFunc.mock.mock.calls).toMatchSnapshot("Inputs");
+  });
+
+  it("Should work with Any with configurations", async () => {
+    const src: SNS.TopicsList = [{ TopicArn: "foo" }, { TopicArn: "bar" }];
+    const listFunc = on(SNS)
+      .mock("listTopics")
+      .resolve(() => {
+        return {
+          Topics: src.splice(0, 1),
+          FooToken: src.length > 0 ? `Next: ${src.length}` : undefined,
+        };
+      });
+
+    const svc = new SNS();
+    const res = await paginate<SNS, "listTopics", SNS.ListTopicsInput>(
+      svc,
+      "listTopics",
+      undefined,
+      "FooMarker" as any,
+      "FooToken" as any
     );
 
     expect(res).toMatchSnapshot();
