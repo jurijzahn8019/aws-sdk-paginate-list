@@ -6,10 +6,4 @@ import type { Request } from "aws-sdk";
  */
 export type UnwrapRequest<T> = T extends Request<infer U, any> ? U : T;
 
-export type ResponseType<P, R, T extends keyof P> = Omit<R, T>;
-
-export type ResponsePromise<P, R, T extends keyof P> = Promise<
-  ResponseType<P, R, T>
->;
-
 export type AnyParam = Record<string, any>;

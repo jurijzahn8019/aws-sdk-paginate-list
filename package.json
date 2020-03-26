@@ -1,6 +1,6 @@
 {
-  "name": "aws-sdk-paginate-list",
-  "version": "1.0.0",
+  "name": "@jurijzahn8019/aws-sdk-paginate-list",
+  "version": "1.0.0-chore-init-ci.2",
   "description": "Provides a function to paginate over a list function on aws-sdk",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es6.js",
@@ -8,15 +8,16 @@
   "scripts": {
     "build": "npm run clean && for S in rollup types; do npm run build:$S; done",
     "build:rollup": "rollup -c",
-    "build:types": "tsc -p tsconfig.prod.json -d --outFile dist/index.d.ts --emitDeclarationOnly",
+    "build:types": "tsc -p tsconfig.prod.json -d --outDir ./dist --emitDeclarationOnly",
     "build:tsc": "tsc --build tsconfig.prod.json",
     "build:watch": "tsc -w",
     "clean": "rm -rf ./dist ./tmp",
     "coveralls": "cat ./tmp/coverage/lcov.info | coveralls",
     "lint": "eslint src/**/*.ts",
-    "packlocal": "export P=jurijzahn8019-aws; npm run clean && npm run build && npm pack && mkdir -p ./tmp && mv -f $P-*.tgz ./tmp/ && tar xfz ./tmp/$P-*.tgz -C ./tmp",
-    "pub": "npm run clean && npm run build && npm publish",
-    "release": "standard-version",
+    "packlocal": "export P=jurijzahn8019-aws; rm -rf ./tmp/package && npm pack && mkdir -p ./tmp && mv -f $P-*.tgz ./tmp/ && tar xfz ./tmp/$P-*.tgz -C ./tmp",
+    "pub": "npm run clean && npm run build && npm publish --access public",
+    "prerel": "standard-version --skip.changelog -p $(git branch --show-current | sed 's/master/rc/g' | sed 's/[_\\/]/-/g')",
+    "release": "standard-version --skip.tag",
     "test": "jest"
   },
   "repository": {

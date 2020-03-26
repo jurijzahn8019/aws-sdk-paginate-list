@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Service, Request } from "aws-sdk";
-import { PaginationRequest, getTokenParam } from "./mappings";
-import type { UnwrapRequest, ResponsePromise } from "./common";
+import { PaginationRequest, getTokenParams } from "./mappings";
+import type { UnwrapRequest, AnyParam } from "./common";
 
 /**
  * Uses Dark Energy (any) to paginate list function
@@ -21,12 +21,21 @@ async function paginateInternal<
   R = S[M] extends (...args: any[]) => Request<any, any>
     ? UnwrapRequest<ReturnType<S[M]>>
     : never,
-  T extends keyof P = never
->(service: S, func: M, params?: P, tokenField?: T): ResponsePromise<P, R, T> {
+  NP extends keyof P = any,
+  NR extends keyof R = any
+>(
+  service: S,
+  func: M,
+  tokenFields: {
+    responseToken: NR;
+    paramToken: NP;
+  },
+  params?: P
+): Promise<R> {
   let prm: any = params || {};
   const bound = ((service[func] as unknown) as (args?: P) => R).bind(service);
   const res = {} as any;
-  const tkn = tokenField || "NextToken";
+  const { paramToken, responseToken } = tokenFields;
 
   // eslint-disable-next-line no-constant-condition
   while (true) {
@@ -44,32 +53,40 @@ async function paginateInternal<
       }
     });
 
-    if (resp[tkn] === undefined || resp[tkn] === "") {
+    if (resp[responseToken] === undefined || resp[responseToken] === "") {
       break;
     }
 
-    prm = { ...prm, [tkn]: resp[tkn] };
+    prm = { ...prm, [paramToken]: resp[responseToken] };
   }
 
   return res;
 }
 
-export function paginate<
+export async function paginate<
   S extends Service,
   F extends keyof S,
   P extends PaginationRequest<S, F>,
-  R = S[F] extends (...args: any[]) => Request<any, any>
+  R extends S[F] extends (...args: any[]) => Request<any, any>
     ? UnwrapRequest<ReturnType<S[F]>>
-    : never,
-  T extends keyof R = any
+    : AnyParam = S[F] extends (...args: any[]) => Request<any, any>
+    ? UnwrapRequest<ReturnType<S[F]>>
+    : AnyParam
 >(
   service: S,
   func: F,
-  param?: P,
-  nextTokenParam?: T
-): ResponsePromise<P, R, keyof P> {
-  const tokenParam = nextTokenParam || getTokenParam(service);
-  return paginateInternal<S>(service, func, param as any, tokenParam as any);
+  params?: P,
+  paramToken?: keyof P,
+  responseToken?: keyof R
+): Promise<R> {
+  const tokenResponse = responseToken || paramToken;
+  const tokenParams = {
+    ...getTokenParams(service),
+    ...(paramToken ? { paramToken } : {}),
+    ...(tokenResponse ? { responseToken: tokenResponse } : {}),
+  };
+
+  return paginateInternal<S>(service, func, tokenParams, params as any);
 }
 
 export * from "./common";
