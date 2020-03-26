@@ -24,12 +24,16 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Npm Install
         run: npm ci
-      - name: Build
+      - name: Lint Code
+        run: npm run lint
+
+      - name: Build Sources
         run: npm run build --if-present
       - name: Execute Tests
         run: npm run test
         env:
           CI: true
+
       - name: Upload coverage
         uses: coverallsapp/github-action@master
         with:
