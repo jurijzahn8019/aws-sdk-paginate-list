@@ -36,7 +36,7 @@ The usage is very easy:
 
 ```ts
 import { KMS } from "aws-sdk";
-import { paginate } from "./index";
+import { paginate } from "@jurijzahn8019/aws-sdk-paginate-list";
 
 const kms = new KMS();
 const { Keys } = await paginate(kms, "listKeys");
@@ -49,7 +49,7 @@ You can supply own config and metadata
 
 ```ts
 import { SNS } from "aws-sdk";
-import { paginate } from "./index";
+import { paginate } from "@jurijzahn8019/aws-sdk-paginate-list";
 
 const svc = new SNS();
 const { Topics } = await paginate<SNS, "listTopics", SNS.ListTopicsInput>(
@@ -63,6 +63,40 @@ const { Topics } = await paginate<SNS, "listTopics", SNS.ListTopicsInput>(
 The typescript inference will help you to pass parameter in a right way
 
 ![vscode_error_kms_marker](./docs/images/vscode_error_kms_marker.png)
+
+Works Great with mocks
+
+```ts
+import { paginate } from "@jurijzahn8019/aws-sdk-paginate-list";
+
+export async function getSecrets(only?: string[]): Promise<SecretsManager.SecretListType> {
+  const smn = new SecretsManager();
+  const { SecretList } = await paginate(smn, "listSecrets"));
+  return SecretList;
+}
+```
+
+```ts
+import { on } from "@jurijzahn8019/aws-promise-jest-mock";
+import { SecretsManager } from "aws-sdk";
+
+jest.mock("aws-sdk");
+
+const listSecrets = on(SecretsManager)
+  .mock("listSecrets")
+  .resolve({
+    SecretList: [
+      { Name: "one", Tags: [{ Key: "foo", Value: "bar" }] },
+      { Name: "two" },
+    ],
+  });
+
+it("Should list secrets from secretsmanager", async () => {
+  const res = await getSecrets();
+  expect(res).toMatchSnapshot();
+  expect(listSecrets.mock).toHaveBeenCalledTimes(1);
+});
+```
 
 ## Contribution
 

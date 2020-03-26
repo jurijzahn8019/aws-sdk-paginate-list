@@ -8,7 +8,7 @@
   "scripts": {
     "build": "npm run clean && for S in rollup types; do npm run build:$S; done",
     "build:rollup": "rollup -c",
-    "build:types": "tsc -p tsconfig.prod.json -d --outFile dist/index.d.ts --emitDeclarationOnly",
+    "build:types": "tsc -p tsconfig.prod.json -d --outDir ./dist --emitDeclarationOnly",
     "build:tsc": "tsc --build tsconfig.prod.json",
     "build:watch": "tsc -w",
     "clean": "rm -rf ./dist ./tmp",

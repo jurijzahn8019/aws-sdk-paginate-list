@@ -2,6 +2,7 @@
 .vscode/
 .github/
 
+docs/
 tmp/
 __snapshots__/
 __mocks__/
