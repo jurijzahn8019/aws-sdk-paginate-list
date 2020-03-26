@@ -35,6 +35,9 @@ If the conditionally types are already setup fo the service/function.
 The usage is very easy:
 
 ```ts
+import { KMS } from "aws-sdk";
+import { paginate } from "./index";
+
 const kms = new KMS();
 const { Keys } = await paginate(kms, "listKeys");
 ```
@@ -45,6 +48,9 @@ But even if there are no pammings for certain types (PRs are welcome 😀)
 You can supply own config and metadata
 
 ```ts
+import { SNS } from "aws-sdk";
+import { paginate } from "./index";
+
 const svc = new SNS();
 const { Topics } = await paginate<SNS, "listTopics", SNS.ListTopicsInput>(
   svc,
