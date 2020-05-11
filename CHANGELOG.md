@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/jurijzahn8019/aws-sdk-paginate-list/compare/v1.0.0...v1.0.1) (2020-05-11)
+
+
+### 🛠 Chore
+
+* **deps:** bump deps ([9613dd3](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/9613dd3041ffda48e1b1b790874645442b24da57))
+
 ## [1.0.0](https://github.com/jurijzahn8019/aws-sdk-paginate-list/compare/v1.0.0-pre.0...v1.0.0) (2020-03-26)
 
 
