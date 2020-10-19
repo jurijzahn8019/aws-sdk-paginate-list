@@ -1,5 +1,52 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`paginate Should work with IAM 1`] = `
+Object {
+  "Marker": "Next: 1",
+  "Policies": Array [
+    Object {
+      "PolicyName": "foo",
+    },
+    Object {
+      "PolicyName": "bar",
+    },
+  ],
+}
+`;
+
+exports[`paginate Should work with IAM: Inputs 1`] = `
+Array [
+  Array [
+    Object {
+      "MaxItems": 100,
+    },
+  ],
+  Array [
+    Object {
+      "Marker": "Next: 1",
+      "MaxItems": 100,
+    },
+  ],
+]
+`;
+
+exports[`paginate Should work with IAM: iam.listPolicies (resolve mock 040f275b1081983968f569e9b2aa48ff15d7f718) 1`] = `
+Array [
+  Object {
+    "MaxItems": 100,
+  },
+]
+`;
+
+exports[`paginate Should work with IAM: iam.listPolicies (resolve mock 1f8d536a0d6c2c735932f8b633c3c3eb1c316258) 1`] = `
+Array [
+  Object {
+    "Marker": "Next: 1",
+    "MaxItems": 100,
+  },
+]
+`;
+
 exports[`paginate Should work with KMS 1`] = `
 Object {
   "Keys": Array [
