@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable import/no-extraneous-dependencies */
-import { Lambda, SecretsManager, KMS, SNS } from "aws-sdk";
+import { Lambda, SecretsManager, KMS, SNS, IAM } from "aws-sdk";
 import { on } from "@jurijzahn8019/aws-promise-jest-mock";
+import type { Policy } from "aws-sdk/clients/iam";
 import { paginate } from "./index";
 
 jest.mock("aws-sdk");
@@ -144,6 +145,29 @@ describe("paginate", () => {
 
     expect(res).toMatchSnapshot();
     expect(res.SecretList).toHaveLength(2);
+    expect(listFunc.mock).toHaveBeenCalledTimes(2);
+    expect(listFunc.mock.mock.calls).toMatchSnapshot("Inputs");
+  });
+
+  it("Should work with IAM", async () => {
+    const src: IAM.Types.policyListType = [
+      { PolicyName: "foo" } as Policy,
+      { PolicyName: "bar" } as Policy,
+    ];
+    const listFunc = on(IAM)
+      .mock("listPolicies")
+      .resolve(() => {
+        return {
+          Policies: src.splice(0, 1),
+          Marker: src.length > 0 ? `Next: ${src.length}` : undefined,
+        };
+      });
+
+    const iam = new IAM();
+    const res = await paginate(iam, "listPolicies", { MaxItems: 100 });
+
+    expect(res).toMatchSnapshot();
+    expect(res.Policies).toHaveLength(2);
     expect(listFunc.mock).toHaveBeenCalledTimes(2);
     expect(listFunc.mock.mock.calls).toMatchSnapshot("Inputs");
   });

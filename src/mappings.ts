@@ -1,11 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Service, SecretsManager, Lambda, KMS } from "aws-sdk";
+import { Service, SecretsManager, Lambda, KMS, IAM } from "aws-sdk";
 import type { AnyParam } from "./common";
 
 export type PaginationRequest<S, F extends keyof S = any> = S extends KMS
   ? KMSPaginationRequest<S, F>
   : S extends Lambda
   ? LambdaPaginationRequest<S, F>
+  : S extends IAM
+  ? IAMPaginationRequest<S, F>
   : S extends SecretsManager
   ? SecretsManagerPaginationRequest<S, F>
   : AnyParam;
@@ -39,6 +41,11 @@ export type KMSPaginationRequest<
   ? KMS.ListKeysRequest
   : AnyParam;
 
+export type IAMPaginationRequest<
+  S extends IAM,
+  T extends keyof S
+> = T extends "listPolicies" ? IAM.ListPoliciesRequest : AnyParam;
+
 export function getTokenParams<S extends Service>(
   service: S
 ): { paramToken: string; responseToken: string } {
@@ -48,5 +55,7 @@ export function getTokenParams<S extends Service>(
     ? { paramToken: "NextToken", responseToken: "NextToken" }
     : service instanceof Lambda
     ? { paramToken: "Marker", responseToken: "NextMarker" }
+    : service instanceof IAM
+    ? { paramToken: "Marker", responseToken: "Marker" }
     : { paramToken: "NextToken", responseToken: "NextToken" };
 }
