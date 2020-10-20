@@ -44,7 +44,7 @@ const { Keys } = await paginate(kms, "listKeys");
 
 ![vscode_intellisense_kms](./docs/images/vscode_intellisense_kms.png)
 
-But even if there are no pammings for certain types (PRs are welcome 😀)
+But even if there are no mappings for certain types (PRs are welcome 😀)
 You can supply own config and metadata
 
 ```ts
