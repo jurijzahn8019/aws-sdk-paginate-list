@@ -44,7 +44,7 @@
     "@commitlint/cli": "^11.0.0",
     "@jurijzahn8019/aws-promise-jest-mock": "^2.3.1",
     "@rollup/plugin-commonjs": "^15.1.0",
-    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@rollup/plugin-node-resolve": "^10.0.0",
     "@rollup/plugin-typescript": "6.1.0",
     "@types/jest": "^26.0.15",
     "@types/node": "^14.14.10",
