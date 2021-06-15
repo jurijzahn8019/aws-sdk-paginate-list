@@ -33,17 +33,16 @@ async function paginateInternal<
   params?: P
 ): Promise<R> {
   let prm: any = params || {};
-  const bound = ((service[func] as unknown) as (args?: P) => R).bind(service);
+  const bound = (service[func] as unknown as (args?: P) => R).bind(service);
   const res = {} as any;
   const { paramToken, responseToken } = tokenFields;
 
   // eslint-disable-next-line no-constant-condition
   while (true) {
     // eslint-disable-next-line no-await-in-loop
-    const resp = (await ((bound(prm) as unknown) as Request<
-      any,
-      any
-    >).promise()) as any;
+    const resp = (await (
+      bound(prm) as unknown as Request<any, any>
+    ).promise()) as any;
 
     Object.entries(resp).forEach(([k, v]: [string, any]) => {
       if (!res[k]) {
