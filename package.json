@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
-    "@jurijzahn8019/aws-promise-jest-mock": "^2.4.6",
+    "@jurijzahn8019/aws-promise-jest-mock": "^2.4.7",
     "@rollup/plugin-commonjs": "^19.0.2",
     "@rollup/plugin-node-resolve": "^13.0.4",
     "@rollup/plugin-typescript": "8.2.5",
