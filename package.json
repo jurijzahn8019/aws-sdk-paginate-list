@@ -50,7 +50,7 @@
     "@rollup/plugin-typescript": "8.2.5",
     "@types/jest": "^27.0.2",
     "@types/node": "^16.10.2",
-    "@typescript-eslint/eslint-plugin": "^4.32.0",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "aws-sdk": "^2.999.0",
     "coveralls": "^3.1.1",
