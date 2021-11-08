@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.41](https://github.com/jurijzahn8019/aws-sdk-paginate-list/compare/v1.0.40...v1.0.41) (2021-11-08)
+
+
+### 🛠 Chore
+
+* **deps-dev:** bump @jurijzahn8019/aws-promise-jest-mock from 2.4.16 to 2.4.17 ([46168d3](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/46168d369a61c340f7214bdac5dc4f532ca26b0b)), closes [#127](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/127) [#108](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/108) [#108](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/108) [#127](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/127) [#108](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/108) [#108](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/108) [#127](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/127) [#127](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/127) [#108](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/108) [#108](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/108) [#131](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/131) [#132](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/132) [#132](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/132) [#132](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/132)
+* **deps-dev:** bump aws-sdk from 2.1018.0 to 2.1019.0 ([cb94992](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/cb94992ec765957447ef4af95b04be267b55395d)), closes [#3935](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/3935) [#3932](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/3932) [#3933](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/3933)
+* **deps-dev:** bump aws-sdk from 2.1019.0 to 2.1020.0 ([d32696c](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/d32696ca19f673d76dacf2bf2bfe2622e9197a51))
+* **deps-dev:** bump aws-sdk from 2.1020.0 to 2.1021.0 ([c960067](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/c960067fabaf809d176bd4b39b54b90659be36ff))
+* **deps-dev:** bump aws-sdk from 2.1021.0 to 2.1022.0 ([0d42286](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/0d422869c3c515200fc41bcc28b1a91be64fad28))
+* **deps-dev:** bump aws-sdk from 2.1022.0 to 2.1023.0 ([8926432](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/8926432f86e5616b58924545cdf89d4f69c512c9))
+* **deps-dev:** bump rollup from 2.58.3 to 2.59.0 ([a683882](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/a683882f7cb765cfdc7d757825bff63a58add91b)), closes [#4249](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/4249) [#4256](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/4256) [#4236](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/4236) [#4249](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/4249) [#4256](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/4256) [#4249](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/4249) [#4256](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/4256) [#4236](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/4236) [#4249](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/4249) [#4256](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/4256) [#4256](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/4256) [#4236](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/4236) [#4249](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/4249)
+* **deps-dev:** bump rollup-plugin-exclude-dependencies-from-bundle from 1.1.20 to 1.1.21 ([0eca696](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/0eca696dbb804eb9df9a8eb3b59c5ffab56ba9ad))
+* **deps:** bump jurijzahn8019/action-dependabot-bump-range from 0.0.49 to 0.0.50 ([5b6b7e9](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/5b6b7e99bdb8264caf1fc500fdcaa75cbdef6bc2))
+
 ### [1.0.40](https://github.com/jurijzahn8019/aws-sdk-paginate-list/compare/v1.0.39...v1.0.40) (2021-11-01)
 
 
