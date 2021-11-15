@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.42](https://github.com/jurijzahn8019/aws-sdk-paginate-list/compare/v1.0.41...v1.0.42) (2021-11-15)
+
+
+### 🛠 Chore
+
+* **deps-dev:** bump @jurijzahn8019/aws-promise-jest-mock from 2.4.17 to 2.4.18 ([a9dd3bb](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/a9dd3bbdcc197da6c28514702a81f8c66a2657f9)), closes [#3935](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/3935) [#3932](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/3932) [#3933](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/3933) [#621](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/621) [#620](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/620) [#614](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/614) [#612](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/612) [#611](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/611) [#602](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/602)
+* **deps-dev:** bump @types/node from 16.11.6 to 16.11.7 ([152e918](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/152e918e967d95353bb29aa1ae124764bbc07a26))
+* **deps-dev:** bump aws-sdk from 2.1023.0 to 2.1024.0 ([31fc764](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/31fc764cba637a2a1d5d4a7c9260a81698a55e64))
+* **deps-dev:** bump aws-sdk from 2.1024.0 to 2.1025.0 ([aff8e60](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/aff8e60f406b8134fd22696e25a5fed43be3a8ec))
+* **deps-dev:** bump aws-sdk from 2.1025.0 to 2.1026.0 ([004898e](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/004898e21b80146923b79a7314e2e88332c1bf10)), closes [#3948](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/3948) [#3950](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/3950) [#3949](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/3949) [#3907](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/3907) [#3946](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/3946)
+* **deps-dev:** bump aws-sdk from 2.1026.0 to 2.1027.0 ([b4f3f50](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/b4f3f50f06b952967e7d717b8076cdc765861cbf)), closes [#3951](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/3951) [#3956](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/3956)
+* **deps-dev:** bump aws-sdk from 2.1027.0 to 2.1028.0 ([07a8fb9](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/07a8fb98d6806d9686451634cd779a970ff6dc50)), closes [#3957](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/3957) [#3954](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/3954)
+* **deps-dev:** bump eslint-plugin-import from 2.25.2 to 2.25.3 ([a8240e5](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/a8240e5bbe8250fad4f4b4f5e7833d16fe97bab5)), closes [#2270](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/2270) [#2271](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/2271) [#2282](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/2282) [#2297](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/2297) [#2272](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/2272) [#2279](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/2279) [#2287](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/2287)
+* **deps-dev:** bump rollup from 2.59.0 to 2.60.0 ([bf47a9e](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/bf47a9e94bf7b91c63eed179e5029a97b47bedac))
+* **deps:** bump jurijzahn8019/action-dependabot-bump-range from 0.0.50 to 0.0.51 ([61b2aaf](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/61b2aaf870a3f30cb2abdcc148e957a0d967c476))
+
 ### [1.0.41](https://github.com/jurijzahn8019/aws-sdk-paginate-list/compare/v1.0.40...v1.0.41) (2021-11-08)
 
 
