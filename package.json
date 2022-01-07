@@ -43,7 +43,7 @@
     "aws-sdk": "^2.x.x"
   },
   "devDependencies": {
-    "@commitlint/cli": "^13.2.1",
+    "@commitlint/cli": "^16.0.1",
     "@jurijzahn8019/aws-promise-jest-mock": "^2.4.26",
     "@rollup/plugin-commonjs": "^20.0.0",
     "@rollup/plugin-node-resolve": "^13.1.3",
