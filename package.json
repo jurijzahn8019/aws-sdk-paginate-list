@@ -48,7 +48,7 @@
     "@jurijzahn8019/aws-promise-jest-mock": "^2.4.41",
     "@rollup/plugin-commonjs": "^21.0.3",
     "@rollup/plugin-node-resolve": "^13.2.0",
-    "@rollup/plugin-typescript": "8.3.1",
+    "@rollup/plugin-typescript": "8.3.2",
     "@types/jest": "^27.4.1",
     "@types/node": "^17.0.23",
     "@typescript-eslint/eslint-plugin": "^5.18.0",
