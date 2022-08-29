@@ -53,7 +53,7 @@
     "@types/node": "^18.7.13",
     "@typescript-eslint/eslint-plugin": "^5.35.1",
     "@typescript-eslint/parser": "^5.35.1",
-    "aws-sdk": "^2.1203.0",
+    "aws-sdk": "^2.1204.0",
     "coveralls": "^3.1.1",
     "eslint": "^8.23.0",
     "eslint-config-airbnb-base": "^15.0.0",
