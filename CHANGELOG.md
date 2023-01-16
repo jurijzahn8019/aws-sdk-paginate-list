@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.104](https://github.com/jurijzahn8019/aws-sdk-paginate-list/compare/v1.0.103...v1.0.104) (2023-01-16)
+
+
+### 🛠 Chore
+
+* **deps-dev:** Bump @commitlint/cli from 17.4.0 to 17.4.1 ([9a14fd4](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/9a14fd4bbbf68f717ef384265a26f664a90bc0a3))
+* **deps-dev:** Bump @commitlint/cli from 17.4.1 to 17.4.2 ([f46c5b2](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/f46c5b2715dcb5cb12f7142c168ebdbb9c37b1b2)), closes [#3499](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/3499) [conventional-changelog/commitlint#3499](https://github.com/conventional-changelog/commitlint/issues/3499)
+* **deps-dev:** Bump @jurijzahn8019/aws-promise-jest-mock from 2.4.78 to 2.4.79 ([51eaf03](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/51eaf0301ce9aa38e1002079a37297553f9ef501))
+* **deps-dev:** Bump @typescript-eslint/eslint-plugin from 5.48.0 to 5.48.1 ([a154338](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/a1543383fbdd21f1691b0b747ad00e96b74df227))
+* **deps-dev:** Bump @typescript-eslint/parser from 5.48.0 to 5.48.1 ([0e0fb3f](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/0e0fb3f72a39e00a40e2df9b7b8bc089cde47d0a))
+* **deps-dev:** Bump aws-sdk from 2.1290.0 to 2.1291.0 ([c03872d](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/c03872d65cab46e2f08ab5ff7a80068d407547c6))
+* **deps-dev:** Bump aws-sdk from 2.1291.0 to 2.1292.0 ([aef38b3](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/aef38b30f5bc8508dc003bd08a1a5000ca3cf33e)), closes [#4319](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/4319)
+* **deps-dev:** Bump aws-sdk from 2.1292.0 to 2.1293.0 ([af9e342](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/af9e342c93885061fd8f162017c7694d6ccb8d03))
+* **deps-dev:** Bump aws-sdk from 2.1293.0 to 2.1294.0 ([de2d248](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/de2d2483c214d623d2c884357717feda1205778e))
+* **deps-dev:** Bump aws-sdk from 2.1294.0 to 2.1295.0 ([7d60d3a](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/7d60d3a3b7fa06822c91868ad7c6f0e7b490fdbd)), closes [#4325](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/4325)
+* **deps-dev:** Bump eslint from 8.31.0 to 8.32.0 ([5b4b74f](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/5b4b74f5cf3bd6fd4c0c0b3746ffcf59a25822e4))
+* **deps-dev:** Bump eslint-plugin-import from 2.26.0 to 2.27.2 ([9921790](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/992179047d5a93ecdb0278e004c5c3643c15db96))
+* **deps-dev:** Bump eslint-plugin-import from 2.27.2 to 2.27.4 ([8c942fe](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/8c942fe5f4e048274b5bab0056c30d9ce93aee9f)), closes [#2668](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/2668) [#2666](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/2666)
+* **deps-dev:** Bump prettier from 2.8.2 to 2.8.3 ([47b3787](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/47b37873070c904e459d14dd0840d488ca45cf1f)), closes [/github.com/prettier/prettier/blob/main/CHANGELOG.md#283](https://github.com/jurijzahn8019//github.com/prettier/prettier/blob/main/CHANGELOG.md/issues/283) [#14170](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/14170) [#14170](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/14170) [#14165](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/14165) [#14153](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/14153) [#14143](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/14143) [#14144](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/14144) [#14137](https://github.com/jurijzahn8019/aws-sdk-paginate-list/issues/14137)
+* **deps:** Bump jurijzahn8019/action-dependabot-bump-range from 0.0.111 to 0.0.112 ([e34b0ec](https://github.com/jurijzahn8019/aws-sdk-paginate-list/commit/e34b0ecf9d18555362a041d4c63f193ee6b62e77))
+
 ### [1.0.103](https://github.com/jurijzahn8019/aws-sdk-paginate-list/compare/v1.0.102...v1.0.103) (2023-01-09)
 
 
